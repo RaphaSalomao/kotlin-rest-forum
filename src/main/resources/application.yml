@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  devtools:
+    restart:
+      enabled: false
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres
+    username: ENC(UA2dDlmdnYLWFucS03X/tC+9oZjSYTNzH6mM0iBs38U=)
+    password: ENC(RyeEAC434eXgI0OZRcPL1yUFWin3BADWyclW8NKEydg=)
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  redis:
+    host: redis
+    port: 6379
+    password: ENC(cKfKNNzk8NPF9+tsRmQuN+EHzxWt+Ir1)
+jwt:
+  secret: ENC(2Mkc1xx5meyCA7qpA2wUwhv9b/Ub8CZYnudAvBF8EjDTHmjDl4CzxbeQf74Ui/OTayG2+RF2PeE=)
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+
+logging:
+  level:
+    com.github.raphasalomao.kotlinrestforum.application: DEBUG

@@ -1,0 +1,41 @@
+version: '3.4'
+services:
+  postgres:
+    image: "postgres"
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - kotlin-rest-docker-network
+  redis:
+    image: "redis"
+    restart: always
+    environment:
+      REDIS_PASSWORD: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - kotlin-rest-docker-network
+  kotlin-rest:
+    image: kotlin-rest
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/raphael/projects/kotlin/kotlin-rest
+    ports:
+      - "8080:8080"
+    command: java -Djasypt.encryptor.password=Y6cQe78lD2H5Q4A3NpuIL83XPQOe4Xd7 -jar kotlin-rest.jar
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - kotlin-rest-docker-network
+networks:
+  kotlin-rest-docker-network:
+    driver: bridge
