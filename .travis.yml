@@ -1,6 +1,6 @@
 language: kotlin
 jdk:
-  - oraclejdk16
+  - openjdk16
 beforeinstall:
   - sudo apt-get update
   - mvn clean package
@@ -17,4 +17,4 @@ deploy:
     tags:
 notifications:
   email: false
-#
+
