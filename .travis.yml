@@ -2,6 +2,7 @@ language: kotlin
 jdk:
   - openjdk16
 beforeinstall:
+  - echo $JAVA_HOME
   - sudo apt-get update
   - mvn clean package
 script:
