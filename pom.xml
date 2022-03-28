@@ -8,13 +8,13 @@
         <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.github.raphasalomao.kotlin-rest</groupId>
+    <groupId>com.github.raphasalomao.kotlinrestforum</groupId>
     <artifactId>kotlin-rest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kotlin-rest</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>11</java.version>
         <kotlin.version>1.6.10</kotlin.version>
     </properties>
     <dependencies>
