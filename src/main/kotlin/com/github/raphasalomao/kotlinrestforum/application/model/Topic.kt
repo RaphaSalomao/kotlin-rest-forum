@@ -21,6 +21,7 @@ data class Topic(
     var title: String,
     var message: String,
     val createdAt: LocalDateTime = LocalDateTime.now(),
+    val updatedAt: LocalDateTime = LocalDateTime.now(),
 
     @ManyToOne
     var course: Course,

@@ -4,22 +4,12 @@ server:
     context-path: /api
 
 spring:
-  devtools:
-    restart:
-      enabled: false
   datasource:
-    url: jdbc:postgresql://kotlin-rest-forum-db.cvaofuqntykb.us-east-2.rds.amazonaws.com:5432/postgres
-    username: postgres
-    password: postgres
     driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: false
     hibernate:
       dialect: org.hibernate.dialect.PostgreSQLDialect
-  redis:
-    host: kotlin-rest-forum-redis.mmtxgq.0001.use2.cache.amazonaws.com
-    port: 6379
-    password:
 jwt:
   secret: ENC(2Mkc1xx5meyCA7qpA2wUwhv9b/Ub8CZYnudAvBF8EjDTHmjDl4CzxbeQf74Ui/OTayG2+RF2PeE=)
 jasypt:

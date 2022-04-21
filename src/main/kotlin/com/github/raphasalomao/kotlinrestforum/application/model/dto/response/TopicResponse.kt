@@ -11,4 +11,5 @@ data class TopicResponse (
     var message: String,
     var status: TopicStatus = TopicStatus.OPEN,
     val createdAt: LocalDateTime = LocalDateTime.now(),
+    val updatedAt: LocalDateTime = LocalDateTime.now(),
 ): Serializable

@@ -13,7 +13,8 @@ class TopicToTopicResponseMapper: Mapper<Topic, TopicResponse> {
             t.title,
             t.message,
             t.status,
-            t.createdAt
+            t.createdAt,
+            t.updatedAt
         )
     }
 }
