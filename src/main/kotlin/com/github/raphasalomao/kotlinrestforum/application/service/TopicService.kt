@@ -26,14 +26,10 @@ class TopicService(
 
     @Cacheable("firstCache")
     fun getTopics(courseName: String?, pageable: Pageable): Page<TopicResponse> {
-        println("Calling get topics")
-        return if (courseName != null) {
+        val response = courseName?.let {
             topicRepository.findByCourseName(courseName, pageable)
-                .map { topicToTopicResponseMapper.map(it) }
-        } else {
-            topicRepository.findAll(pageable)
-                .map { topicToTopicResponseMapper.map(it) }
-        }
+        } ?: topicRepository.findAll(pageable)
+        return response.map { topicToTopicResponseMapper.map(it) }
     }
 
     fun getTopic(id: UUID): TopicResponse {
